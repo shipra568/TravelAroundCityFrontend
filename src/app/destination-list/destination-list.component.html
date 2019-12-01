@@ -1,0 +1,48 @@
+<div id="frame">
+  <h1 id="cityHeading">
+    Select City
+  </h1>
+
+  <p-dropdown [options]="cityList" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name" [showClear]="true"></p-dropdown>
+
+  <button [disabled]="disableGo" type="submit" id="goStyle" (click)="getDestinations()">Go</button>
+  <br>
+  <br>
+  <br>
+  <div id="DestinationTable" *ngIf="showDestinationTable">
+    <p-dataTable [value]="destinationList" [(selection)]="destinationSelected" dataKey="dest">
+      <p-header id="myHeader">Destinations {{cityString}}</p-header>
+      <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+      <p-column  [style]="{'width':'300px'}" field="dest" header="Place"></p-column>
+      <p-column  [style]="{'text-align': 'center' , 'width':'300px'}" field="type" header="Type"></p-column>
+      <p-footer>
+        <button [disabled]="destinationSelected.length===0" type="submit" id="hotelStyle" (click)="findHotels()">Find Hotels</button>
+      </p-footer>
+    </p-dataTable>
+  </div>
+
+  <ngx-spinner
+    bdOpacity = 0.9
+    bdColor="rgba(51,51,51,0.8)"
+    size = "medium"
+    color = "#fff"
+    type = "ball-beat"
+    [fullScreen] = "true">
+    <p style="color: white" > Loading... </p>
+  </ngx-spinner>
+
+  <div id="HotelsTable" *ngIf="showHotelsTable">
+    <p-dataTable [value]="hotelArray"  dataKey="hotelName" scrollable="true" scrollHeight="600px" scrollWidth="750px">
+      <p-header id="hotelHeader">Hotels {{hotelString}}</p-header>
+      <p-column  [style]="{'width':'200px'}" field="name" header="Name"></p-column>
+      <p-column  [style]="{'text-align': 'center' ,'width':'100px'}" id="distance" field="distance" header="Distance (in km)"></p-column>
+      <p-column  [style]="{'white-space':'pre'}" field="track" header="Most optimal route from this hotel"></p-column>
+    </p-dataTable>
+  </div>
+
+  <div class="alert" *ngIf="showError">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{error}}
+  </div>
+
+</div>

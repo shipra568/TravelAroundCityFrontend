@@ -1,0 +1,107 @@
+#dropdownStyling{
+width: 150px;
+font-size: 20px;
+height: 28px;
+background-color:white;
+}
+
+#cityHeading{
+    font-size: 20px;
+    color: blue;
+}
+
+#frame{
+    width: 300px;
+    margin-left:100px;
+}
+
+#goStyle{
+    color: Black;
+    font-size: 20px;
+    border-radius: 4px;
+    position: absolute;
+    height: 33px;
+    background-color: palegoldenrod;
+}
+
+#hotelStyle{
+    width: 90px;
+    height: 30px;
+    background-color: darksalmon;
+    font-size: 13px;
+    margin-left: 250px;
+}
+
+#tableStyle{
+    width:200px;
+}
+
+#myHeader{
+    color: hotpink;
+    font-size: medium;
+    margin-left: 60px;
+}
+
+.p-header{
+    color:blue;
+}
+
+#DestinationTable {
+    width: 300px;
+    float: left;
+}
+
+#HotelsTable {
+    width: 700px;
+    height: 600px;
+    margin-left:800px;
+}
+
+#distance{
+ margin-left:80px;
+}
+
+#distanceCol{
+  width:300px;
+  padding-left: 50px;
+}
+
+
+
+#hotelHeader{
+  color:blue;
+  font-size: large;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  position: absolute;
+  top: 100px;
+  left:700px;
+
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.ui-datatable-data> tr> td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
